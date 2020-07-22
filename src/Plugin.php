@@ -59,6 +59,8 @@ class Plugin extends CraftPlugin
             if ($event->attribute === 'usage') {
                 /** @var Asset $asset */
                 $asset = $event->sender;
+                // $event->html = $this->asset->refreshContent();
+
                 $event->html = $this->asset->getUsage($asset);
 
                 // Prevent other event listeners from getting invoked
